@@ -13,7 +13,7 @@ discovery.relabel "containers" {
 
   rule {
     target_label = "server"
-    replacement  = "srv1579547"
+    replacement  = "srv1579549"
   }
 }
 
