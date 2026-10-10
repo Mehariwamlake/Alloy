@@ -3,11 +3,7 @@ services:
     image: grafana/alloy:latest
     container_name: alloy
     restart: unless-stopped
-  node-exporter:
-    image: prom/node-exporter:latest
-    restart: always
-    ports:
-      - "9100:9100"
+
 
     volumes:
       - ./alloy-config.alloy:/etc/alloy/config.alloy:ro
@@ -19,6 +15,10 @@ services:
       - run
       - /etc/alloy/config.alloy
       - --storage.path=/var/lib/alloy
-
+  node-exporter:
+    image: prom/node-exporter:latest
+    restart: always
+    ports:
+      - "9100:9100"
 volumes:
   alloy-data:
